@@ -9,19 +9,19 @@ key is a regular expression which is used for word spotting. Value is the possib
 
 The regular expressions used are:
 
--(Hello|Hi|Hey) : Matches various forms of greetings from the user.
--university: Matches user mentions of the term "university".
--student : Matches queries related to being a student or applying for degrees.
--(study|course|classes|subject): Matches user queries related to studies.
--(admission|query|status|documents): Matches queries related to admissions or status.
--graduate: Matches queries related to graduate studies.
--undergraduate: Matches queries related to undergraduate studies.
--(international|citizen) : Matches queries related to international students.
--want : Matches user expressions of desires or intentions.
--will : Matches user expressions of plans or intentions.
--yes/no: Matches user affirmations.
--(thanks|thank you) : Matches expressions of gratitude from the user.
-others: Default regular expression that matches any input if none of the above patterns match.
+-(Hello|Hi|Hey) : Matches various forms of greetings from the user.   
+-university: Matches user mentions of the term "university".    
+-student : Matches queries related to being a student or applying for degrees.    
+-(study|course|classes|subject): Matches user queries related to studies.      
+-(admission|query|status|documents): Matches queries related to admissions or status.    
+-graduate: Matches queries related to graduate studies.     
+-undergraduate: Matches queries related to undergraduate studies.     
+-(international|citizen) : Matches queries related to international students.    
+-want : Matches user expressions of desires or intentions.    
+-will : Matches user expressions of plans or intentions.     
+-yes/no: Matches user affirmations.      
+-(thanks|thank you) : Matches expressions of gratitude from the user.     
+others: Default regular expression that matches any input if none of the above patterns match.    
 
 References used: 
 ***[1] Provided by Professor github.com/norib016/Developing_A_Chatbot_Python/blob/master/eliza.py***
@@ -62,31 +62,31 @@ break
 
 -This function processes the user input and returns an appropriate response. - It matches the user input against predefined patterns in a response dictionary and selects a response based on the matched pattern. - If no match is found in the dictionary, it checks for responses in a text file and returns a response if a match is found. 
 
--If neither the dictionary nor the file contains a matching response, it returns a default response. 
+-If neither the dictionary nor the file contains a matching response, it returns a default response.      
 
-get_response(user_input) Function 
-This function is responsible for generating a response based on the user input. 
-Functionality: 
-1. Pattern Matching: 
-- The function iterates over each key-value pair in the response_dict dictionary, where each key represents a regular expression pattern, and each value is a list of possible responses.
-- It checks if the user input matches the current pattern using re.match() function. The re.IGNORECASE flag is used to perform a case-insensitive match.
+get_response(user_input) Function    
+This function is responsible for generating a response based on the user input.     
+#### Functionality:     
+1. Pattern Matching:      
+- The function iterates over each key-value pair in the response_dict dictionary, where each key represents a regular expression pattern, and each value is a list of possible responses.    
+- It checks if the user input matches the current pattern using re.match() function. The re.IGNORECASE flag is used to perform a case-insensitive match.    
   
-2. Response Selection:
-- If a match is found, the function selects a random response from the corresponding list of responses using random.choice() function.
+2. Response Selection:   
+- If a match is found, the function selects a random response from the corresponding list of responses using random.choice() function.    
   
-3. Placeholder Replacement:
-- If the selected response contains a placeholder %, the function replaces it with an appropriate value using the transform_pronouns function.
-- The placeholderindicates where the matched part of the user input should be inserted.
+3. Placeholder Replacement:    
+- If the selected response contains a placeholder %, the function replaces it with an appropriate value using the transform_pronouns function.    
+- The placeholderindicates where the matched part of the user input should be inserted.   
    
-4. Return Response: - The function returns the selected response and exits.
-5. Checking in File: - If no match is found in the response_dict, the function calls the get_response_from_file() 
-function to check for responses in a text file. - If a response is found in the file, it returns that response. 
+4. Return Response: - The function returns the selected response and exits.    
+5. Checking in File: - If no match is found in the response_dict, the function calls the get_response_from_file()    
+function to check for responses in a text file. - If a response is found in the file, it returns that response.    
 Usage 
-To use the chatbot: 
-1. Run the script. 
+To use the chatbot:   
+1. Run the script.    
 2. Enter your name when prompted. 
-3. Start typing your queries or messages. 
-4. To quit the chat, type "quit", "bye", or "exit". 
-1. Techniques - NLP-related -- word spotting by using regular expressions and re syntax(re.findall and 
+3. Start typing your queries or messages.    
+4. To quit the chat, type "quit", "bye", or "exit".    
+1. Techniques - NLP-related -- word spotting by using regular expressions and re syntax(re.findall and     
 re.search). -- string operations, such as "re.sub", "join", "string.rstrip()" -- sentence tokenization -- case convert --Python -- input and print founctions -- dictionary and list -- while and for loop -- if/else logic -- 
 %s placeholder -- making beep sound -- random package 
